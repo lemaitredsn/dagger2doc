@@ -5,6 +5,7 @@ import android.view.View
 import android.widget.Button
 import androidx.fragment.app.Fragment
 import ru.lemaitre.daggersample.R
+import ru.lemaitre.daggersample.mvp.inject_storage.InjectStorageFragment
 import ru.lemaitre.daggersample.mvp.get_storage.GetStorageFragment
 
 class MenuFragment : Fragment(R.layout.fragment_menu) {
@@ -17,5 +18,12 @@ class MenuFragment : Fragment(R.layout.fragment_menu) {
                 .replace(R.id.main_content, GetStorageFragment())
                 .commit()
         }
+
+        view.findViewById<Button>(R.id.injectStorage).setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.main_content, InjectStorageFragment())
+                .commit()
+        }
+
     }
 }

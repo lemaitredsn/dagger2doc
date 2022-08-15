@@ -8,6 +8,7 @@ import ru.lemaitre.daggersample.data.NetworkRepository
 import ru.lemaitre.daggersample.data.StorageGetRepository
 import ru.lemaitre.daggersample.data.storage.StorageGet
 import ru.lemaitre.daggersample.data.utils.StorageUtilsGet
+import ru.lemaitre.daggersample.mvp.inject_storage.InjectStorageFragment
 
 /**
  * Даггер с помощь аннатоции @Component найдет этот интерфейс и
@@ -65,4 +66,6 @@ interface AppComponent {
      * создания репозитория см GetStorageFragment
      * */
     fun provideStorageGetRepository(): StorageGetRepository
+
+    fun injectRepository(fragment: InjectStorageFragment)
 }
